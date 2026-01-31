@@ -1,0 +1,5 @@
+fastapi==0.127.1
+uvicorn==0.40.0
+scikit-learn==1.7.2
+nltk==3.9.2
+

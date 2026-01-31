@@ -1,0 +1,285 @@
+/* ===========================
+   Global Styles
+   =========================== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #121212;
+  color: #f0f0f0;
+}
+
+/* ===========================
+   Layout (Container + Sidebar + Content)
+   =========================== */
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background: #1f1f1f;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+}
+
+.sidebar .logo {
+  color: #00adb5;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.menu li {
+  list-style: none;
+  padding: 15px;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.menu li:hover, .menu li.active {
+  background: #00adb5;
+  border-radius: 8px;
+}
+
+#content {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* ===========================
+   Animations (Fade In)
+   =========================== */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* ===========================
+   Card Component
+   =========================== */
+.card {
+  background: #1f1f1f;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* ===========================
+   Image Blocks (Hero / Overview Images)
+   =========================== */
+.image-block {
+  margin: 40px auto;
+  text-align: center;
+}
+
+.image-block img {
+  max-width: 500px;       /* keeps it from stretching too wide */
+  width: 100%;            /* responsive scaling */
+  border-radius: 12px;    /* smooth rounded corners */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5); /* soft shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-block img:hover {
+  transform: scale(1.05); /* slight zoom on hover */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+.image-block .caption {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: #aaa;
+  font-style: italic;
+}
+
+/* ===========================
+   Images inside Cards (EDA, Preprocessing, etc.)
+   =========================== */
+.card img {
+  width: 100%;              
+  max-width: 400px;         
+  height: auto;
+  background: #b2efef;      
+  border-radius: 10px;
+  margin: 0 auto 15px;      
+  display: block;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+
+.card img:hover {
+  transform: scale(1.1);   
+}
+
+/* ===========================
+   Code Blocks (Preprocessing Strategy)
+   =========================== */
+.code-block {
+  background: #0f0f0f;
+  color: #00adb5;
+  padding: 15px;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+}
+
+/* ===========================
+   WordClouds & Top Words Layout
+   =========================== */
+.wordclouds .wc-container,
+.top-words .tw-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.wordclouds img,
+.top-words img {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+
+.wordclouds img:hover,
+.top-words img:hover {
+  transform: scale(1.05);
+}
+
+.wordclouds h4,
+.top-words h4 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #00adb5;
+}
+
+/* ===========================
+   Evaluation Tables (Model Performance)
+   =========================== */
+.eval-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.eval-table thead {
+  background: linear-gradient(90deg, #00adb5, #007a7e);
+  color: #fff;
+}
+
+.eval-table th, .eval-table td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.eval-table tbody tr {
+  background: #1f1f1f;
+  color: #f0f0f0;
+  transition: background 0.3s ease;
+}
+
+.eval-table tbody tr:nth-child(even) {
+  background: #2a2a2a;
+}
+
+.eval-table tbody tr:hover {
+  background: #333;
+}
+
+/* ===========================
+   Live Spam Detector Section
+   =========================== */
+.detector-card {
+  background: #1f1f1f;
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+.detector-card textarea {
+  width: 100%;
+  height: 120px;
+  border-radius: 8px;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  background: #2a2a2a;
+  color: #f0f0f0;
+  resize: none;
+  transition: box-shadow 0.3s ease;
+  box-sizing : border-box; /* prevents overflow */
+}
+
+.detector-card textarea:focus {
+  outline: none;
+  box-shadow: 0 0 10px #00adb5;
+}
+
+.detector-card button {
+  background: linear-gradient(135deg, #00adb5, #007a7e);
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.detector-card button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00adb5;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* ===========================
+   Prediction Result Animations
+   =========================== */
+.result-ham {
+  color: #4caf50;
+  animation: glowGreen 1s ease forwards;
+}
+
+.result-spam {
+  color: #f44336;
+  animation: glowRed 1s ease forwards;
+}
+
+@keyframes glowGreen {
+  0% { text-shadow: 0 0 0px #4caf50; opacity: 0; }
+  50% { text-shadow: 0 0 20px #4caf50; opacity: 1; transform: scale(1.2); }
+  100% { text-shadow: 0 0 5px #4caf50; transform: scale(1); }
+}
+
+@keyframes glowRed {
+  0% { text-shadow: 0 0 0px #f44336; opacity: 0; }
+  50% { text-shadow: 0 0 20px #f44336; opacity: 1; transform: scale(1.2); }
+  100% { text-shadow: 0 0 5px #f44336; transform: scale(1); }
+}
